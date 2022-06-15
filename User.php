@@ -39,6 +39,10 @@ function getTotal() {
          return $total_price;
 }
 
+public function setPaymentMethod($_payment_method) {
+  $this->payment_method = $_payment_method;
+}
+
 public function addProductToCart($_product) {
   if ($_product->available) {
       $this->cart[] = $_product;
@@ -48,16 +52,12 @@ public function addProductToCart($_product) {
   }
 }
 
-public function setPaymentMethod($_payment_method) {
-  $this->payment_method = $_payment_method;
-}
-
 public function pay() {
   if($this->payment_method->isValid()) {
     return "hai pagato";
   } else {
-    return "errore";
-  }
+    throw new Exception("Carta non valida");
+        }
 }
 }
 ?>

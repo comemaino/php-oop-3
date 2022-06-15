@@ -21,11 +21,16 @@ $lara->addProductToCart($tuna_can);
 $lara->addProductToCart($rice_and_veg);
 
 $lara->register("lara", "lara@gmail.com");
-$lara->setPaymentMethod(new CreditCard(1962145598670988, "04/28", 655));
+$lara->setPaymentMethod(new CreditCard(1962145598670988, "04/21", 655));
 
 var_dump($lara);
 
-echo $lara->pay();
+try {
+  $lara->pay();
+} catch (Exception $e) {
+  var_dump($e->getMessage());
+  echo "Carta non valida";
+}
 ?>
 
 <!DOCTYPE html>
