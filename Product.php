@@ -3,8 +3,9 @@ I prodotti saranno oltre al cibo, anche giochi, cucce, etc.L'utente potrà sia c
 Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibili solo in un periodo particolare (es. da maggio ad agosto). -->
 
 <?php 
-
+require_once __DIR__ ."/Supplier.php";
 class Product {
+  use Supplier;
   public $name;
   public $inventory_code;
   public $target_animal;

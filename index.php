@@ -11,6 +11,8 @@ $catnip_ball = new Toy("Catnip Ball", "T458H68", "cat", "4.90", "1+", "Fabric");
 $tuna_can = new Food("Tuna Can", "F459H67", "cat", "2.50", false, false);
 $rice_and_veg = new Food("Rice and Vegetables", "F65H456", "dog", "4.50", true, true);
 
+$tuna_can->setSupplier("Monge", "via nanana 10 Roma", "PI 456784321");
+
 var_dump($tuna_can, $rice_and_veg, $rubber_bone, $catnip_ball);
 
 $lara = new User();
